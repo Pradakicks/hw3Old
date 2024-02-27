@@ -66,13 +66,12 @@ void dealloc(Node* head)
 //   Add any helper functions or
 //   function object struct declarations
 // -----------------------------------------------
+bool isOdd(int num){
+    return (num % 2);
+}
 
 
-
-
-
-int main(int argc, char* argv[])
-{
+int main(int argc, char* argv[]){
     if(argc < 2) {
         cout << "Please provide an input file" << endl;
         return 1;
@@ -85,9 +84,20 @@ int main(int argc, char* argv[])
     cout << "Original list: ";
     print(head);
 
-    // Test out your linked list code
+    // // Test out your linked list code
+    // Node* smaller = nullptr;
+    // Node* larger = nullptr;
+    // llpivot(head, smaller, larger, 8);
 
+    // print(smaller);
+    // std::cout << "Split" << std::endl;
+    // print(larger);
 
+    // dealloc(smaller);
+    // dealloc(larger);
+
+    head = llfilter(head, isOdd);
+    print(head);
 
     
     return 0;
